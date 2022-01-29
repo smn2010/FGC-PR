@@ -1,0 +1,33 @@
+# batch-shaping baseline.
+python train_cifar10_bas.py \
+-data  ${DATA_DIR}\
+-a resnet20 -b 256 \
+--gpu 0 \
+--rho 0.4 \
+--log ${LOG_DIR} \
+--desp default
+
+
+## feature-gate coupling.
+python train_cifar10_fgc.py \
+-data ${DATA_DIR} \
+-a resnet20 -b 256 \
+--bas_pretrain ${BAS_PRETRAIN} \
+--gpu 2 \
+--rho 0.4 \
+--nn_epoch 20 \
+--nn_num 200 \
+--contrast_index 7 8 \
+--kappa 0.003 \
+--log ${LOG_DIR} \
+--desp default
+
+
+## test (show accuracy and pruning ratio)
+python test_comp_bas.py \
+-data ${DATA_DIR} \
+-a resnet20 -b 256 \
+--resume ${WEIGHTS} \
+--log ${LOG_FILE} \
+--gpu ${GPU_ID}
+
