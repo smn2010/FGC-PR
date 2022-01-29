@@ -20,7 +20,7 @@ pytorch=1.7.1
 ## Run
 ### FGC Training
 
-The following is the default settings of training FGC on CIFAR10 dataset. Replace ${DATA_DIR} with your own path of CIFAR10. Replace ${BAS_PRETRAIN} with the checkpoint in './weights' (Our implementation of BAS is rather slow, so we load it as pretrained weights for training efficiency and stability).  Replace ${LOG_DIR} with the path for log files.
+The following is the default settings of training FGC on CIFAR10 dataset. Replace ${DATA_DIR} with your own path of CIFAR10. Replace ${BAS_PRETRAIN} with the [BAS](https://openreview.net/forum?id=Bke89JBtvB) initialization checkpoint in './weights' (Our implementation of BAS is rather slow, so we load it as pretrained weights for training efficiency and stability).  Replace ${LOG_DIR} with the path for log files.
 ```
 # DATA_DIR = 
 # BAS_PRETRAIN = 
